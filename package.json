@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node app",
+    "dev": "nodemon app",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,32 @@
   "devDependencies": {
     "eslint": "^8.31.0",
     "jest": "^29.3.1",
+    "prettier": "^2.8.1",
     "supertest": "^6.3.3"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": "latest"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "prettier/prettier": "warn",
+      "semi": "warn",
+      "quotes": [
+        "warn",
+        "single"
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": false
   }
 }
